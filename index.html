@@ -269,6 +269,69 @@ footer{padding:clamp(60px,7vw,100px) var(--pad) 28px;border-top:1px solid var(--
   .chap.right .cap{flex-direction:row;text-align:left}
 }
 @media(max-width:560px){.posts{grid-template-columns:1fr}}
+
+/* mobile menu: a backdrop-filter on the header would trap the fixed overlay inside the header bar */
+@media(max-width:1000px){
+  .menu-on header{backdrop-filter:none;-webkit-backdrop-filter:none;background:transparent}
+  header nav{height:100vh;height:100dvh}
+}
+/* ===== mobile polish ===== */
+@media(max-width:700px){
+  .theme{display:none}
+  .scroll{display:none}
+  header{padding:16px var(--pad)}
+  header .logo img{width:46px}
+  header.solid .logo img{width:40px}
+
+  .hero{min-height:620px}
+  .hero-in{bottom:max(30px,calc(env(safe-area-inset-bottom) + 22px));gap:20px}
+  .hero .slide img{position:absolute;top:0;left:0;width:100%;height:66%;object-fit:cover}
+  .dsk{display:none}
+  .hero::after{background:linear-gradient(180deg,rgba(8,7,6,.55) 0%,rgba(8,7,6,0) 20%,rgba(8,7,6,0) 38%,#0d0b0a 70%)}
+  .idx{display:flex;order:-1;gap:8px;min-width:0;margin-bottom:4px;align-self:start}
+  .idx li{display:block;opacity:1}
+  .idx li b{display:none}
+  .idx li span{display:block;font-size:0;width:34px;height:2px;padding:0}
+  .idx li span::after,.idx li span i{height:2px}
+  .idx li.on span::after{background:rgba(255,255,255,.4)}
+  .hero .eyebrow{font-size:.6rem;letter-spacing:.2em;line-height:1.8;margin-bottom:16px}
+  .hero h1{font-size:clamp(2.3rem,10.4vw,2.9rem);line-height:1.04}
+  .hero .feat{display:grid;grid-template-columns:1fr;gap:10px;margin-top:22px;padding-top:18px}
+  .hero .feat small{display:none}
+  .hero .feat{gap:8px;margin-top:20px;padding-top:16px}
+  .hero .feat img{height:24px}
+  .hero .feat span{font-size:.64rem;letter-spacing:.2em}
+  .hero .sub{margin-top:24px;flex-direction:column;align-items:flex-start;gap:14px;width:100%}
+  .hero .sub .btn{width:100%;justify-content:center;padding:18px 24px}
+
+  .pad{padding-block:84px}
+  .shead{padding-top:80px;padding-bottom:30px}
+  .intro .l p{max-width:none}
+  .stat b,.mini b{font-size:clamp(2.6rem,13vw,3.4rem)}
+  .cfacts b{font-size:clamp(1.9rem,9.2vw,2.5rem);white-space:nowrap}
+  .cfacts span,.stat span{letter-spacing:.2em}
+  .cta-row{flex-direction:column;align-items:flex-start;gap:12px}
+  .cta-row .btn{width:100%;justify-content:center}
+
+  .plist{gap:70px}
+  .pw h3{font-size:clamp(2.2rem,9.5vw,2.9rem)}
+  .pw .meta{padding-top:22px}
+
+  .heritage{height:118svh}
+  .heritage h2{font-size:clamp(2.6rem,12vw,3.6rem)}
+  .heritage p{font-size:1rem}
+
+  .contact{padding-block:88px}
+  .contact::before{background:linear-gradient(180deg,rgba(10,8,6,.84),rgba(10,8,6,.72) 45%,rgba(10,8,6,.9))}
+  .info a.tel{font-size:1.9rem}
+  .panel{padding:26px 22px}
+  .send .btn{width:100%;justify-content:center}
+  .send .fine{max-width:none}
+
+  .fgrid{gap:34px 24px;margin-bottom:40px}
+  .fword{padding-block:70px 56px}
+  .legal{flex-direction:column;gap:6px}
+}
 </style>
 </head>
 <body>
@@ -294,7 +357,7 @@ footer{padding:clamp(60px,7vw,100px) var(--pad) 28px;border-top:1px solid var(--
   <div class="slide light"><img src="assets/crisanto/lakeside.webp" srcset="assets/crisanto/lakeside-m.webp 800w, assets/crisanto/lakeside.webp 1500w" sizes="100vw" decoding="async" fetchpriority="low" alt="Avantika Crisanto towers by the lake"></div>
   <div class="hero-in">
     <div class="copy">
-      <span class="eyebrow" data-h>Avantika Constructions · Hyderabad · Since 2011</span>
+      <span class="eyebrow" data-h><span class="dsk">Avantika Constructions · </span>Hyderabad · Since 2011</span>
       <h1 data-h>Finding happiness…<em>you desire.</em></h1>
       <div class="feat" data-h>
         <small>Now featuring</small>
@@ -521,6 +584,7 @@ footer{padding:clamp(60px,7vw,100px) var(--pad) 28px;border-top:1px solid var(--
     gsap.ticker.lagSmoothing(0);
     lenis.stop();
   }
+  if(lenis){new MutationObserver(function(){if(document.body.classList.contains('menu-on'))lenis.stop();else if(veil.style.display==='none')lenis.start()}).observe(document.body,{attributes:true,attributeFilter:['class']})}
   $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=a.getAttribute('href');if(h.length<2)return;e.preventDefault();var el=h==='#top'?document.body:$(h);if(!el)return;if(lenis)lenis.scrollTo(el,{duration:1.8});else el.scrollIntoView({behavior:'smooth'})})});
 
   gsap.set('[data-h]',{opacity:0,y:40});
