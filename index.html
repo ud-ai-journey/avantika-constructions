@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avantika Constructions | Premium Residences in Hyderabad</title>
+<meta name="description" content="Avantika Constructions, Hyderabad. Homes composed with quiet confidence since 2011. Now featuring Avantika Crisanto.">
+<link rel="icon" href="assets/img/favavantika.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&family=Hanken+Grotesk:wght@300;400;500&family=Yatra+One&display=swap" rel="stylesheet">
+<style>
+:root{
+  --serif:'Newsreader',Georgia,serif; --sans:'Hanken Grotesk',system-ui,sans-serif;
+  --ease:cubic-bezier(.19,.8,.22,1);
+  --pad:clamp(22px,4.2vw,72px);
+}
+[data-theme=light]{--bg:#efeae0;--bg2:#e6dfd1;--fg:#1b1713;--muted:#6f6657;--accent:#8c6b38;--line:rgba(27,23,19,.16)}
+[data-theme=dark]{--bg:#0d0b0a;--bg2:#15120f;--fg:#efe8da;--muted:#9a8f7c;--accent:#c9aa6c;--line:rgba(239,232,218,.15)}
+[data-theme=light] .inv{--bg:#14110e;--bg2:#1c1814;--fg:#efe8da;--muted:#a09582;--accent:#c9aa6c;--line:rgba(239,232,218,.16)}
+[data-theme=dark] .inv{--bg:#efeae0;--bg2:#e6dfd1;--fg:#1b1713;--muted:#6f6657;--accent:#8c6b38;--line:rgba(27,23,19,.16)}
+.always-dark{--bg:#100d0b;--bg2:#17130f;--fg:#efe8da;--muted:#a09582;--accent:#c9aa6c;--line:rgba(239,232,218,.16)}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-weight:300;font-size:1.02rem;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .6s,color .6s}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+::selection{background:var(--accent);color:var(--bg)}
+section,footer{background:var(--bg);color:var(--fg);transition:background .6s,color .6s}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:400}
+em{font-style:italic}
+
+.link{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:400;position:relative;padding:8px 0}
+.link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform-origin:right;transition:transform .7s var(--ease)}
+.link:hover::after{transform:scaleX(0)}
+.link i{font-style:normal;transition:transform .6s var(--ease)}.link:hover i{transform:translateX(6px)}
+.btn{display:inline-flex;align-items:center;gap:16px;padding:19px 34px;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:400;background:var(--fg);color:var(--bg);transition:background .5s,color .5s,letter-spacing .6s var(--ease)}
+.btn:hover{background:var(--accent);color:var(--bg);letter-spacing:.3em}
+.btn.white{background:#fff;color:#14110e}
+.btn.white:hover{background:var(--accent,#c9aa6c);color:#14110e}
+
+.veil{position:fixed;inset:0;z-index:300;background:#0d0b0a;display:grid;place-items:center}
+.veil img{width:84px;opacity:0}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:100;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px var(--pad);color:#fff;transition:background .6s,color .6s,padding .6s var(--ease)}
+header.solid{background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);color:var(--fg);padding-block:14px}
+header .logo{grid-column:2;grid-row:1}
+header .logo img{width:56px;transition:width .6s var(--ease)}
+header.solid .logo img{width:44px}
+header nav{display:contents}
+header .nl,header .nr{display:flex;gap:clamp(20px,2.6vw,44px);align-items:center;grid-row:1}
+header .nl{grid-column:1}
+header .nr{grid-column:3;justify-self:end}
+header nav a{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;font-weight:400;position:relative;padding:6px 0}
+header nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .6s var(--ease)}
+header nav a:hover::after{transform:scaleX(1)}
+header .book{padding:11px 20px!important;box-shadow:inset 0 0 0 1px currentColor;transition:background .5s,color .5s}
+header .book::after{display:none}
+header .book:hover{background:#fff;color:#14110e}
+header.solid .book:hover{background:var(--fg);color:var(--bg)}
+.burger{display:none;width:34px;height:12px;position:relative;grid-column:3;justify-self:end}
+.burger::before,.burger::after{content:"";position:absolute;left:0;right:0;height:1px;background:currentColor;transition:.5s var(--ease)}
+.burger::before{top:0}.burger::after{bottom:0}
+.menu-on .burger::before{top:5.5px;transform:rotate(45deg)}.menu-on .burger::after{bottom:5.5px;transform:rotate(-45deg)}
+
+/* HERO */
+.hero{position:relative;height:100svh;min-height:660px;overflow:hidden;color:#fff;background:#0d0b0a}
+.hero .slide{position:absolute;inset:0;opacity:0;transition:opacity 2s ease}
+.hero .slide.on{opacity:1}
+.hero .slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.1)}
+.hero .slide.on img{animation:kb 11s ease-out forwards}
+@keyframes kb{from{transform:scale(1.1)}to{transform:scale(1.02)}}
+.hero .slide.light::after{content:"";position:absolute;inset:0;background:rgba(8,7,6,.34)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,7,6,.55) 0%,rgba(8,7,6,0) 24%,rgba(8,7,6,0) 52%,rgba(8,7,6,.82) 100%),linear-gradient(90deg,rgba(8,7,6,.5),rgba(8,7,6,0) 48%);pointer-events:none}
+.hero-in{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(34px,6.5vh,72px);z-index:3;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}
+.hero .copy{max-width:min(36vw,560px)}
+.hero .eyebrow{color:#fff;opacity:.85;display:block;margin-bottom:22px}
+.hero h1{font-family:var(--serif);font-weight:200;font-size:clamp(2.4rem,4.1vw,4.6rem);line-height:1.02;letter-spacing:-.02em}
+.hero h1 em{display:block}
+.hero .feat{display:flex;align-items:center;gap:18px;margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.3);flex-wrap:wrap}
+.hero .feat small{font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;opacity:.8}
+.hero .feat img{height:30px;width:auto}
+.hero .feat span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.hero .sub{margin-top:28px;display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.idx{list-style:none;display:grid;gap:14px;min-width:230px;align-self:end}
+.idx li{display:grid;grid-template-columns:34px 1fr;align-items:center;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;opacity:.55;cursor:pointer;transition:opacity .5s}
+.idx li:hover,.idx li.on{opacity:1}
+.idx li b{font-weight:400}
+.idx li span{position:relative;padding-bottom:10px}
+.idx li span::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:rgba(255,255,255,.28)}
+.idx li span i{position:absolute;left:0;bottom:0;height:1px;width:100%;background:#fff;transform:scaleX(0);transform-origin:left;z-index:1}
+.scroll{position:absolute;left:50%;bottom:18px;z-index:3;width:1px;height:38px;background:linear-gradient(#fff,transparent);transform-origin:top;animation:cue 2.6s infinite}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+.pad{padding:clamp(100px,13vw,200px) var(--pad)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:0 clamp(16px,2vw,32px)}
+
+/* about */
+.intro .l{grid-column:1/5}
+.intro .r{grid-column:6/13}
+.intro .l p{color:var(--muted);margin:26px 0 34px;max-width:340px}
+.intro h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.1rem,4.6vw,4.9rem);line-height:1.1;letter-spacing:-.015em}
+.intro h2 em{color:var(--accent)}
+.stats{margin-top:clamp(70px,9vw,140px);display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.stat{padding:30px 20px 0 0}
+.stat+.stat{padding-left:clamp(14px,2vw,30px);border-left:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-weight:200;font-size:clamp(3rem,6.4vw,6.6rem);line-height:1;letter-spacing:-.02em}
+.stat span{display:block;margin-top:14px;font-size:.68rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;padding:clamp(90px,11vw,170px) var(--pad) clamp(40px,5vw,70px)}
+.shead h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6vw,6.4rem);line-height:1;letter-spacing:-.02em;margin-top:22px}
+.shead h2 em{color:var(--accent)}
+.shead p{color:var(--muted);max-width:420px}
+
+/* FEATURED CRISANTO */
+.crisanto{padding:clamp(90px,11vw,170px) var(--pad);background:var(--bg)}
+.crisanto .top{display:grid;grid-template-columns:repeat(12,1fr);gap:0 clamp(16px,2vw,32px);align-items:end}
+.crisanto .top .a{grid-column:1/8}
+.crisanto .top .b{grid-column:9/13;padding-bottom:10px}
+.crisanto .wm{width:clamp(280px,48vw,780px);height:auto;margin:26px 0 0}
+.crisanto .top p{color:var(--muted)}
+.cmosaic{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(12px,1.6vw,24px);margin-top:clamp(50px,6vw,90px)}
+.cmosaic figure{position:relative;overflow:hidden;background:#0d0b0a}
+.cmosaic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.6s var(--ease)}
+.cmosaic figure:hover img{transform:scale(1.05)}
+.cmosaic figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(8,7,6,.7));pointer-events:none}
+.cmosaic figcaption{position:absolute;left:20px;bottom:16px;z-index:2;color:#fff;font-size:.68rem;letter-spacing:.28em;text-transform:uppercase}
+.m1{grid-column:span 7;aspect-ratio:16/10}.m2{grid-column:span 5;aspect-ratio:auto}
+.m3{grid-column:span 5;aspect-ratio:16/10}.m4{grid-column:span 7;aspect-ratio:16/10}
+.cfacts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(50px,6vw,90px);border-top:1px solid var(--line)}
+.cfacts div{padding:28px 20px 0 0}
+.cfacts div+div{padding-left:clamp(14px,2vw,30px);border-left:1px solid var(--line)}
+.cfacts b{display:block;font-family:var(--serif);font-weight:200;font-size:clamp(2.4rem,4.6vw,4.8rem);line-height:1;letter-spacing:-.02em}
+.cfacts span{display:block;margin-top:10px;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.cta-row{display:flex;gap:30px;align-items:center;flex-wrap:wrap;margin-top:clamp(40px,5vw,70px)}
+
+/* chapters */
+.chap{position:relative;height:100svh;min-height:600px;overflow:hidden;color:#fff;background:#0d0b0a}
+.chap .bg{position:absolute;inset:-9% 0;will-change:transform}
+.chap .bg img{width:100%;height:100%;object-fit:cover}
+.chap::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,7,6,.3),rgba(8,7,6,0) 30%,rgba(8,7,6,0) 45%,rgba(8,7,6,.78) 100%)}
+.cap{position:absolute;left:var(--pad);right:var(--pad);bottom:clamp(34px,7vh,78px);z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.cap .no{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;opacity:.85;display:block;margin-bottom:18px;font-weight:400}
+.cap h3{font-family:var(--serif);font-weight:200;font-size:clamp(3rem,8vw,8.8rem);line-height:.94;letter-spacing:-.02em}
+.cap h3 em{display:block}
+.chap.right .cap{flex-direction:row-reverse;text-align:right}
+.split{display:grid;grid-template-columns:5fr 7fr;min-height:100svh}
+.split.rev{grid-template-columns:7fr 5fr}
+.split.rev .pic{order:2}
+.split .txt{background:var(--bg2);padding:clamp(100px,10vw,150px) clamp(28px,5vw,96px) clamp(40px,6vw,90px);display:flex;flex-direction:column;justify-content:space-between;gap:50px;transition:background .6s}
+.split .txt .no{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:400}
+.split .txt h3{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,6vw,6.6rem);line-height:.96;letter-spacing:-.02em;margin:18px 0 28px}
+.split .txt h3 em{display:block;color:var(--accent)}
+.split .txt p{color:var(--muted);max-width:360px}
+.split .pic{position:relative;overflow:hidden;min-height:70vh;background:#0d0b0a}
+.split .pic img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;will-change:transform}
+
+
+/* PROJECTS: wide, breathable */
+.projects{padding:0 0 clamp(110px,13vw,210px)}
+.plist{display:grid;gap:clamp(90px,11vw,180px);padding:0 var(--pad)}
+.pw .pic{display:block;position:relative;overflow:hidden;aspect-ratio:21/10;background:#0d0b0a}
+.pw .pic img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;transition:filter .8s}
+.pw .pic::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 0 rgba(255,255,255,.0);transition:box-shadow .8s var(--ease);pointer-events:none}
+.pw .pic:hover::after{box-shadow:inset 0 0 0 14px rgba(239,232,218,.14)}
+.pw .meta{display:grid;grid-template-columns:90px 1.2fr 1fr auto;gap:clamp(16px,2.4vw,40px);align-items:end;padding-top:clamp(26px,3vw,44px)}
+.pw .no{font-size:.72rem;letter-spacing:.3em;color:var(--accent);font-weight:400;padding-bottom:12px}
+.pw h3{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,4.6vw,5rem);line-height:1;letter-spacing:-.02em}
+.pw h3 em{color:var(--accent)}
+.pw .meta p{color:var(--muted);max-width:360px;padding-bottom:6px}
+.pw:nth-child(even) .pic{margin-left:clamp(0px,9vw,150px)}
+.pw:nth-child(odd) .pic{margin-right:clamp(0px,9vw,150px)}
+@media(max-width:1000px){.pw .meta{grid-template-columns:50px 1fr}.pw .meta p,.pw .meta .link{grid-column:2}.pw .pic{aspect-ratio:4/3}.pw:nth-child(n) .pic{margin:0}}
+
+/* heritage */
+.heritage{position:relative;height:130svh;background:#0d0b0a;color:#fff}
+.heritage .stick{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;place-items:center;text-align:center}
+.heritage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1)}
+.heritage .stick::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 50%,rgba(10,8,6,.58),rgba(10,8,6,.32))}
+.heritage .in{position:relative;z-index:2;padding:0 var(--pad)}
+.heritage h2{font-family:var(--serif);font-weight:200;font-size:clamp(2.8rem,8vw,9rem);line-height:.98;letter-spacing:-.02em}
+.heritage p{margin:30px auto 0;max-width:420px;opacity:.95;font-size:1.08rem}
+
+/* journal */
+.posts{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2vw,32px);padding:0 var(--pad) clamp(90px,11vw,170px)}
+.post .ph{overflow:hidden;aspect-ratio:4/5;margin-bottom:22px;background:#0d0b0a}
+.post img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.post:hover img{transform:scale(1.06)}
+.post small{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:400}
+.post h3{font-family:var(--serif);font-weight:300;font-size:1.6rem;line-height:1.15;margin-top:10px}
+
+/* contact */
+.contact{position:relative;overflow:hidden;padding:clamp(110px,13vw,200px) var(--pad);isolation:isolate}
+.cbg{position:absolute;inset:0;z-index:-2}
+.cbg img{width:100%;height:112%;object-fit:cover;filter:saturate(.9)}
+.contact::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,8,6,.86) 0%,rgba(10,8,6,.5) 48%,rgba(10,8,6,.18) 100%),linear-gradient(180deg,rgba(10,8,6,.4),rgba(10,8,6,0) 35%,rgba(10,8,6,.72))}
+.cwrap{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(30px,4vw,70px) clamp(16px,2vw,32px);align-items:center}
+.cl{grid-column:1/7}
+.panel{grid-column:8/13}
+.contact h2{font-family:var(--serif);font-weight:200;font-size:clamp(2.8rem,6vw,6.6rem);line-height:.98;letter-spacing:-.02em;margin:22px 0 28px}
+.contact h2 em{color:var(--accent)}
+.contact .lead{color:#cfc5b3;max-width:400px}
+.info{margin-top:46px;display:grid;gap:28px;color:#cfc5b3}
+.info small{display:block;font-size:.64rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:400}
+.info a.tel{font-family:var(--serif);font-weight:300;font-size:2.2rem;color:#fff}
+.panel{background:rgba(16,13,11,.66);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);box-shadow:inset 0 0 0 1px rgba(239,232,218,.16),0 40px 90px -30px rgba(0,0,0,.6);padding:clamp(28px,3.4vw,56px);display:grid;gap:28px}
+.ptitle h3{font-family:var(--serif);font-weight:300;font-size:clamp(1.7rem,2.3vw,2.4rem);line-height:1.1;margin-top:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.f label{display:block;font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:#a99f8c;transition:color .4s}
+.f input{width:100%;background:none;border:0;border-bottom:1px solid rgba(239,232,218,.25);padding:12px 0;color:#fff;font:inherit;font-size:1.08rem;outline:none;border-radius:0;transition:border-color .5s}
+.f:focus-within label{color:var(--accent)}
+.f input:focus{border-color:var(--accent)}
+.chipsel{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.chipsel button{padding:10px 18px;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:#d8cfbd;box-shadow:inset 0 0 0 1px rgba(239,232,218,.3);transition:background .4s,color .4s,box-shadow .4s}
+.chipsel button:hover{box-shadow:inset 0 0 0 1px var(--accent);color:#fff}
+.chipsel button.on{background:#efe8da;color:#14110e;box-shadow:none}
+.send{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.send .fine{font-size:.78rem;color:#a99f8c;max-width:220px;line-height:1.5}
+.note{min-height:1.2em;color:var(--accent)}
+
+footer{padding:clamp(60px,7vw,100px) var(--pad) 28px;border-top:1px solid var(--line)}
+/* footer wordmark: monochrome, echoing the logo lettering */
+.fword{padding:clamp(80px,11vw,190px) 0 clamp(70px,9vw,150px);text-align:center;border-top:1px solid var(--line);margin-top:clamp(20px,3vw,50px)}
+.fword .emb{width:clamp(54px,5.4vw,92px);aspect-ratio:1;margin:0 auto clamp(26px,3vw,52px);background:rgba(239,232,218,.45);-webkit-mask:url(assets/img/favavantika.png) center/contain no-repeat;mask:url(assets/img/favavantika.png) center/contain no-repeat}
+.fword .t{font-family:'Yatra One',var(--serif);font-size:clamp(3.6rem,19.5vw,27rem);line-height:.92;letter-spacing:.015em;color:transparent;-webkit-text-stroke:1px rgba(239,232,218,.55);position:relative;display:inline-block;white-space:nowrap;user-select:none;padding:0 .03em}
+
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1.2fr 1.2fr;gap:40px;margin-bottom:70px}
+.fbrand img{width:68px;margin-bottom:18px}
+.fgrid p,.fgrid a{display:block;color:var(--muted);font-size:.92rem;margin-bottom:8px;transition:color .3s}
+.fgrid a:hover{color:var(--fg)}
+.fgrid h4{font-weight:400;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.legal{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.72rem;color:var(--muted);letter-spacing:.06em;padding-top:24px;border-top:1px solid var(--line)}
+
+.theme{position:fixed;left:18px;bottom:18px;z-index:120;display:flex;gap:2px;padding:4px;background:rgba(20,17,14,.78);backdrop-filter:blur(10px);border-radius:100px;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
+.theme button{padding:8px 14px;border-radius:100px;color:#cfc6b5;transition:.4s}
+.theme button.on{background:#efe8da;color:#14110e}
+
+[data-r]{opacity:0;transform:translateY(34px)}
+
+@media(max-width:1000px){
+  header nav{display:flex;position:fixed;inset:0;background:var(--bg);color:var(--fg);flex-direction:column;justify-content:center;align-items:flex-start;padding:0 var(--pad);gap:14px;clip-path:inset(0 0 100% 0);transition:clip-path .9s var(--ease);z-index:-1}
+  header .nl,header .nr{flex-direction:column;align-items:flex-start;gap:14px;grid-column:auto;justify-self:auto}
+  header nav a{font-family:var(--serif);font-size:2.4rem;letter-spacing:0;text-transform:none;font-weight:300}
+  header .book{box-shadow:none;padding:6px 0!important}
+  .menu-on nav{clip-path:inset(0)}
+  .menu-on header{color:var(--fg)}
+  .burger{display:block}
+  .hero-in{grid-template-columns:1fr}.idx{display:none}
+  .hero .copy{max-width:none}
+  .intro .l,.intro .r{grid-column:1/-1}
+  .intro .r{margin-top:50px}
+  .cl,.panel{grid-column:1/-1}
+  .two{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr}.fgrid>.fbrand{grid-column:span 2}
+  .stats,.cfacts{grid-template-columns:1fr 1fr}.stat:nth-child(3),.cfacts div:nth-child(3){border-left:0;padding-left:0}.stat:nth-child(n+3),.cfacts div:nth-child(n+3){margin-top:30px}
+  .crisanto .top .a,.crisanto .top .b{grid-column:1/-1}.crisanto .top .b{margin-top:24px}
+  .cmosaic{grid-template-columns:1fr}.m1,.m2,.m3,.m4{grid-column:1/-1;aspect-ratio:4/3}
+  .split,.split.rev{grid-template-columns:1fr}.split .pic{min-height:62vh;order:-1!important}
+  .posts{grid-template-columns:1fr 1fr}
+  .chap.right .cap{flex-direction:row;text-align:left}
+}
+@media(max-width:560px){.posts{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="veil" id="veil"><img src="assets/img/Avanthika.svg" alt="Avantika"></div>
+
+<header id="hdr">
+  <nav id="nav">
+    <div class="nl"><a href="#crisanto">Crisanto</a><a href="#projects">Projects</a><a href="#about">About</a></div>
+    <div class="nr"><a href="#journal">Journal</a><a href="#contact">Contact</a><a href="#contact" class="book">Book a visit</a></div>
+  </nav>
+  <a class="logo" href="#top" aria-label="Avantika Constructions"><img src="assets/img/Avanthika.svg" alt="Avantika"></a>
+  <button class="burger" id="burger" aria-label="Menu"></button>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="slide on"><img src="assets/crisanto/night-entrance.jpg" alt="Avantika Crisanto entrance at night"></div>
+  <div class="slide"><img src="assets/crisanto/balcony.jpg" alt="A Crisanto residence balcony at dusk"></div>
+  <div class="slide"><img src="assets/crisanto/vista.jpg" alt="Crisanto Central Vista"></div>
+  <div class="slide light"><img src="assets/crisanto/lakeside.jpg" alt="Avantika Crisanto towers by the lake"></div>
+  <div class="hero-in">
+    <div class="copy">
+      <span class="eyebrow" data-h>Avantika Constructions · Hyderabad · Since 2011</span>
+      <h1 data-h>Finding happiness…<em>you desire.</em></h1>
+      <div class="feat" data-h>
+        <small>Now featuring</small>
+        <img src="assets/crisanto/crisanto-logo.png" alt="Avantika Crisanto">
+        <span>Chandanagar – Ameenpur Road</span>
+      </div>
+      <div class="sub" data-h>
+        <a class="btn white" href="#crisanto">Explore Crisanto</a>
+        <a class="link" href="#contact">Book a site visit <i>→</i></a>
+      </div>
+    </div>
+    <ul class="idx" id="idx" data-h>
+      <li class="on"><b>01</b><span>The entrance<i></i></span></li>
+      <li><b>02</b><span>The residence<i></i></span></li>
+      <li><b>03</b><span>The vista<i></i></span></li>
+      <li><b>04</b><span>The towers<i></i></span></li>
+    </ul>
+  </div>
+  <div class="scroll"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="intro pad" id="about">
+  <div class="grid">
+    <div class="l">
+      <div class="eyebrow" data-r>A warm welcome</div>
+      <p data-r>Established in 2011, Avantika Constructions is one of India’s finest construction companies, renowned for excellence and leadership in prestigious construction projects and development.</p>
+      <a class="link" data-r href="#projects">Our projects <i>→</i></a>
+    </div>
+    <div class="r">
+      <h2 data-r>Homes composed with <em>quiet confidence,</em> uncompromising craft and an obsessive eye for detail.</h2>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat" data-r><b data-n="12">0</b><span>Years of experience</span></div>
+    <div class="stat" data-r><b data-n="40">0</b><span>Residential projects</span></div>
+    <div class="stat" data-r><b data-n="5">0</b><span>Commercial projects</span></div>
+    <div class="stat" data-r><b data-n="500">0</b><span>Happy families</span></div>
+  </div>
+</section>
+
+<!-- FEATURED: CRISANTO -->
+<section class="crisanto always-dark" id="crisanto">
+  <div class="top">
+    <div class="a">
+      <div class="eyebrow" data-r>Featured project</div>
+      <img class="wm" data-r src="assets/crisanto/crisanto-logo.png" alt="Avantika Crisanto">
+    </div>
+    <div class="b" data-r>
+      <p>A thoughtfully planned residential destination on Chandanagar – Ameenpur Road, designed around open spaces, recreation, wellness, community and contemporary urban living.</p>
+    </div>
+  </div>
+
+  <div class="cmosaic">
+    <figure class="m1" data-r><img src="assets/crisanto/night-entrance.jpg" alt="" loading="lazy"><figcaption>The entrance</figcaption></figure>
+    <figure class="m2" data-r><img src="assets/crisanto/balcony.jpg" alt="" loading="lazy" style="object-position:70% 50%"><figcaption>The residence</figcaption></figure>
+    <figure class="m3" data-r><img src="assets/crisanto/vista.jpg" alt="" loading="lazy"><figcaption>The vista</figcaption></figure>
+    <figure class="m4" data-r><img src="assets/crisanto/lakeside.jpg" alt="" loading="lazy" style="object-position:40% 50%"><figcaption>The towers</figcaption></figure>
+  </div>
+
+  <div class="cfacts">
+    <div data-r><b data-n="80" data-s="%">0</b><span>Open space</span></div>
+    <div data-r><b data-n="7" data-s="">0</b><span>Residential towers</span></div>
+    <div data-r><b>2 – 4 BHK</b><span>1,355 – 3,475 sft</span></div>
+    <div data-r><b>1.25 <small style="font-size:.4em;font-style:italic">lakh sft</small></b><span>Sports arena</span></div>
+  </div>
+
+  <div class="cta-row" data-r>
+    <a class="btn white" href="https://www.avantikaconstructions.com/crisanto/" target="_blank" rel="noopener">Explore Crisanto <i style="font-style:normal">→</i></a>
+    <a class="link" href="#contact">Book a site visit <i>→</i></a>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects">
+  <div class="shead" style="padding-bottom:clamp(30px,4vw,60px)">
+    <div><div class="eyebrow" data-r>Ongoing projects</div><h2 data-r>The <em>signature</em> collection</h2></div>
+    <p data-r>Four more residences from Avantika, each composed around light, landscape and the way families really live.</p>
+  </div>
+  <div class="plist">
+    <article class="pw">
+      <a class="pic" href="#contact" data-r><img src="assets/enhanced/espino-aerial.jpg" alt="Avantika’s Espino" loading="lazy"></a>
+      <div class="meta" data-r><span class="no">01</span><h3>Avantika’s <em>Espino</em></h3><p>Composed around light, landscape and the way families really live.</p><a class="link" href="#contact">Enquire <i>→</i></a></div>
+    </article>
+    <article class="pw">
+      <a class="pic" href="#contact" data-r><img src="assets/enhanced/arudra.jpg" alt="Avantika’s Arudra" loading="lazy"></a>
+      <div class="meta" data-r><span class="no">02</span><h3>Avantika’s <em>Arudra</em></h3><p>A tower of glass, timber and light, crafted for everyday calm.</p><a class="link" href="#contact">Enquire <i>→</i></a></div>
+    </article>
+    <article class="pw">
+      <a class="pic" href="#contact" data-r><img src="assets/enhanced/punarvasu.jpg" alt="Avantika’s Punarvasu" loading="lazy"></a>
+      <div class="meta" data-r><span class="no">03</span><h3>Avantika’s <em>Punarvasu</em></h3><p>Landscaped courtyards and open-air spaces to gather, unwind and celebrate.</p><a class="link" href="#contact">Enquire <i>→</i></a></div>
+    </article>
+    <article class="pw">
+      <a class="pic" href="#contact" data-r><img src="assets/enhanced/pushyami.jpg" alt="Avantika’s Pushyami" loading="lazy"></a>
+      <div class="meta" data-r><span class="no">04</span><h3>Avantika’s <em>Pushyami</em></h3><p>A residence that rewards coming home, from the first light to the last.</p><a class="link" href="#contact">Enquire <i>→</i></a></div>
+    </article>
+  </div>
+</section>
+
+<!-- HERITAGE -->
+<section class="heritage" id="heritage">
+  <div class="stick">
+    <img id="herImg" src="assets/enhanced/heritage.jpg" alt="Avantika township among misty hills" loading="lazy">
+    <div class="in">
+      <span class="eyebrow" style="color:#fff;opacity:.85">Design is our legacy</span>
+      <h2 style="margin-top:26px">When are we<br>creating <em>yours?</em></h2>
+      <p>With a focus on quality craftsmanship and attention to detail, the journey to creating a dream home with Avantika is a rewarding and exciting experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section id="journal" style="padding:0">
+  <div class="shead">
+    <div><div class="eyebrow" data-r>Latest news</div><h2 data-r>The Avantika <em>journal</em></h2></div>
+    <a class="link" data-r href="#">Discover news <i>→</i></a>
+  </div>
+  <div class="posts">
+    <a class="post" data-r href="#"><div class="ph"><img src="assets/img/blog1.jpg" alt="" loading="lazy"></div><small>Insights</small><h3>Villa vs. Apartment Living: the best of both worlds</h3></a>
+    <a class="post" data-r href="#"><div class="ph"><img src="assets/img/blog2.jpg" alt="" loading="lazy"></div><small>Investment</small><h3>Unlock smart investment: the wisest choice</h3></a>
+    <a class="post" data-r href="#"><div class="ph"><img src="assets/img/blog3.jpg" alt="" loading="lazy"></div><small>Lifestyle</small><h3>Why Avantika’s apartments are the best of all</h3></a>
+    <a class="post" data-r href="#"><div class="ph"><img src="assets/img/blog4.jpg" alt="" loading="lazy"></div><small>Family</small><h3>Family-friendly living in a residential haven</h3></a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact always-dark" id="contact">
+  <div class="cbg"><img src="assets/crisanto/night-entrance.jpg" alt="" loading="lazy"></div>
+  <div class="cwrap">
+    <div class="cl">
+      <div class="eyebrow" data-r>Private enquiries</div>
+      <h2 data-r>Let’s find the home <em>you desire.</em></h2>
+      <p class="lead" data-r>Arrange a private site visit and let our team walk you through your future residence.</p>
+      <div class="info" data-r>
+        <div><small>Call us</small><a class="tel" href="tel:+918500658989">+91 85006 58989</a></div>
+        <div><small>Visit our office</small>Plot #102, 3rd &amp; 4th Floor, Road No 3/2,<br>Zenas International School Lane, Mathrusri Nagar,<br>Miyapur, Hyderabad – 500049, Telangana.</div>
+      </div>
+    </div>
+    <form class="panel" id="form" data-r>
+      <div class="ptitle"><span class="eyebrow">Request a visit</span><h3>Tell us a little about you</h3></div>
+      <div class="two">
+        <div class="f"><label for="n">Name</label><input id="n" required autocomplete="name"></div>
+        <div class="f"><label for="p">Phone</label><input id="p" type="tel" placeholder="+91" required autocomplete="tel"></div>
+      </div>
+      <div class="f"><label for="e">Email</label><input id="e" type="email" required autocomplete="email"></div>
+      <div class="f"><label>I’m interested in</label>
+        <div class="chipsel" id="chips" role="radiogroup" aria-label="Project">
+          <button type="button" class="on" data-v="Avantika Crisanto" role="radio" aria-checked="true">Crisanto</button>
+          <button type="button" data-v="Avantika’s Espino" role="radio" aria-checked="false">Espino</button>
+          <button type="button" data-v="Avantika’s Arudra" role="radio" aria-checked="false">Arudra</button>
+          <button type="button" data-v="Avantika’s Punarvasu" role="radio" aria-checked="false">Punarvasu</button>
+          <button type="button" data-v="Avantika’s Pushyami" role="radio" aria-checked="false">Pushyami</button>
+        </div>
+        <input type="hidden" id="pr" value="Avantika Crisanto">
+      </div>
+      <div class="send"><button class="btn white" type="submit">Request a visit <span>→</span></button><span class="fine">We’ll call you back to confirm a convenient time.</span></div>
+      <div class="note" role="status" id="note"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="always-dark">
+  <div class="fgrid">
+    <div class="fbrand"><img src="assets/img/Avanthika.svg" alt="Avantika"><p>Crafting quality homes in Hyderabad since 2011.</p></div>
+    <div><h4>Explore</h4><a href="#crisanto">Crisanto</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#journal">Journal</a></div>
+    <div><h4>Projects</h4><a href="#crisanto">Avantika Crisanto</a><a href="#projects">Avantika’s Espino</a><a href="#projects">Avantika’s Arudra</a><a href="#projects">Avantika’s Punarvasu</a><a href="#projects">Avantika’s Pushyami</a></div>
+    <div><h4>Contact</h4><a href="tel:+918500658989">+91 85006 58989</a><a href="#contact">Mathrusri Nagar, Miyapur,<br>Hyderabad – 500049</a><a href="#contact">Book a private visit</a></div>
+  </div>
+  <div class="fword" data-r aria-hidden="true">
+    <div class="emb"></div>
+    <div class="t">avantika</div>
+  </div>
+  <div class="legal"><span>© 2024 Avantika Constructions. All rights reserved.</span><span>Concept redesign · Sample</span></div>
+</footer>
+
+<div class="theme" id="theme" aria-label="Preview theme"><button data-t="light">Light</button><button data-t="dark" class="on">Dark</button></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  var $=function(s,c){return (c||document).querySelector(s)},$$=function(s,c){return [].slice.call((c||document).querySelectorAll(s))};
+  var root=document.documentElement,veil=$('#veil'),hdr=$('#hdr');
+  var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  function setTheme(t){root.setAttribute('data-theme',t);$$('#theme button').forEach(function(b){b.classList.toggle('on',b.dataset.t===t)});try{localStorage.setItem('av-theme2',t)}catch(e){}}
+  try{var st=localStorage.getItem('av-theme2');if(st)setTheme(st)}catch(e){}
+  $$('#theme button').forEach(function(b){b.onclick=function(){setTheme(b.dataset.t)}});
+
+  var slides=$$('.hero .slide'),idx=$$('#idx li'),cur=0,timer=null,DUR=7000;
+  function go(i){
+    slides[cur].classList.remove('on');idx[cur].classList.remove('on');
+    cur=i;
+    var im=$('img',slides[cur]);im.style.animation='none';void im.offsetWidth;im.style.animation='';
+    slides[cur].classList.add('on');idx[cur].classList.add('on');
+    idx.forEach(function(li,k){var b=$('i',li);b.style.transition='none';b.style.transform=k<cur?'scaleX(1)':'scaleX(0)'});
+    requestAnimationFrame(function(){requestAnimationFrame(function(){var b=$('i',idx[cur]);b.style.transition='transform '+DUR+'ms linear';b.style.transform='scaleX(1)'})});
+    clearTimeout(timer);timer=setTimeout(function(){go((cur+1)%slides.length)},DUR);
+  }
+  idx.forEach(function(li,k){li.onclick=function(){go(k)}});
+
+  $$('#chips button').forEach(function(b){b.onclick=function(){$$('#chips button').forEach(function(x){x.classList.remove('on');x.setAttribute('aria-checked','false')});b.classList.add('on');b.setAttribute('aria-checked','true');$('#pr').value=b.dataset.v}});
+  $('#form').addEventListener('submit',function(e){e.preventDefault();$('#note').textContent='Thank you. Our team will be in touch shortly.';this.reset();$$('#chips button').forEach(function(x,i){x.classList.toggle('on',i===0)});$('#pr').value='Avantika Crisanto'});
+  $('#burger').onclick=function(){document.body.classList.toggle('menu-on')};
+  $$('#nav a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-on')})});
+  addEventListener('scroll',function(){hdr.classList.toggle('solid',scrollY>80)},{passive:true});
+
+  function fallback(){
+    veil.style.display='none';
+    $$('[data-r],[data-h]').forEach(function(e){e.style.opacity=1;e.style.transform='none'});
+    $$('[data-n]').forEach(function(e){e.textContent=e.dataset.n+(e.dataset.s||'+')});
+    go(0);
+  }
+  if(!(window.gsap&&window.ScrollTrigger)){fallback();return}
+  gsap.registerPlugin(ScrollTrigger);
+
+  var lenis=null;
+  if(window.Lenis&&!reduce){
+    lenis=new Lenis({duration:1.3,easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))}});
+    lenis.on('scroll',ScrollTrigger.update);
+    gsap.ticker.add(function(t){lenis.raf(t*1000)});
+    gsap.ticker.lagSmoothing(0);
+    lenis.stop();
+  }
+  $$('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var h=a.getAttribute('href');if(h.length<2)return;e.preventDefault();var el=h==='#top'?document.body:$(h);if(!el)return;if(lenis)lenis.scrollTo(el,{duration:1.8});else el.scrollIntoView({behavior:'smooth'})})});
+
+  gsap.set('[data-h]',{opacity:0,y:40});
+  var tl=gsap.timeline();
+  tl.to('.veil img',{opacity:1,duration:1,ease:'power2.out'})
+    .to('.veil img',{opacity:0,duration:.6,ease:'power2.in'},1.5)
+    .to(veil,{opacity:0,duration:.9,ease:'power2.inOut',onComplete:function(){veil.style.display='none'}},1.9)
+    .add(function(){if(lenis)lenis.start();go(0)},2.0)
+    .to('[data-h]',{opacity:1,y:0,duration:1.5,ease:'expo.out',stagger:.14},2.2);
+  setTimeout(function(){if(veil.style.display!=='none'){veil.style.display='none';gsap.set('[data-h]',{opacity:1,y:0});if(lenis)lenis.start();go(0)}},6500);
+
+  gsap.utils.toArray('[data-r]').forEach(function(el){
+    gsap.to(el,{opacity:1,y:0,duration:1.4,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 90%',once:true}});
+  });
+
+  $$('[data-n]').forEach(function(el){
+    var n=+el.dataset.n,s=el.dataset.s===undefined?'+':el.dataset.s,o={v:0};
+    ScrollTrigger.create({trigger:el,start:'top 92%',once:true,onEnter:function(){gsap.to(o,{v:n,duration:2.2,ease:'expo.out',onUpdate:function(){el.textContent=Math.round(o.v)},onComplete:function(){el.textContent=n+s}})}});
+  });
+
+  gsap.utils.toArray('.chap .bg').forEach(function(bg){
+    gsap.fromTo(bg,{yPercent:-6},{yPercent:6,ease:'none',scrollTrigger:{trigger:bg.parentNode,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  gsap.utils.toArray('.pw .pic img').forEach(function(im){gsap.fromTo(im,{yPercent:-5},{yPercent:5,ease:'none',scrollTrigger:{trigger:im.parentNode,start:'top bottom',end:'bottom top',scrub:true}})});
+  gsap.utils.toArray('.pw .pic').forEach(function(el){gsap.fromTo(el,{clipPath:'inset(8% 6% 8% 6%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',end:'top 45%',scrub:.6}})});
+  gsap.utils.toArray('.split .pic img').forEach(function(im){
+    gsap.fromTo(im,{yPercent:-5},{yPercent:5,ease:'none',scrollTrigger:{trigger:im.parentNode,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+  gsap.utils.toArray('.split .pic,.cmosaic figure').forEach(function(el){
+    gsap.fromTo(el,{clipPath:'inset(8% 5% 8% 5%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',end:'top 40%',scrub:.6}});
+  });
+  gsap.fromTo('.cbg img',{yPercent:-6},{yPercent:0,ease:'none',scrollTrigger:{trigger:'.contact',start:'top bottom',end:'bottom bottom',scrub:true}});
+  gsap.fromTo('#herImg',{scale:1.14},{scale:1,ease:'none',scrollTrigger:{trigger:'#heritage',start:'top bottom',end:'bottom bottom',scrub:true}});
+
+  addEventListener('load',function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
